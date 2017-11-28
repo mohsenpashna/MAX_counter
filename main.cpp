@@ -36,7 +36,7 @@ vector<int> solution(int N, vector<int> &A){
         } else if(A[i]==N+1){
             Counters = max_op(Max, N);
         }
-//        print_vec(Counters);
+        print_vec(Counters);
     }
     return Counters;
 };
@@ -59,8 +59,8 @@ vector<int> max_op(unsigned int &MAX, int size_A){
 }
 
 void inc_a(vector<int> &Counter, int idx, unsigned int &MAX){
-    Counter[A[idx]] +=1;
+    Counter[A[idx]-1] +=1;
 //    cout << " inc happened: " << idx << "| \n";
-    MAX = (MAX < A[idx]) ? Counter[A[idx]] : MAX;
+    MAX = (MAX < Counter[A[idx]-1]) ? Counter[A[idx]-1] : MAX;
 
 }
